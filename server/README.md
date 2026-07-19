@@ -56,12 +56,20 @@ No separate database setup needed — SQLite is a single file
 npm test
 ```
 
-15 tests: 11 REST integration tests (auth, groups, invite-code joining,
-PDF upload/download, membership permission checks) and 4 real-time tests
-using actual Socket.io client connections — including a full offer →
-accept → answer → ICE → end handshake between two live sockets, and a
-DM-privacy test confirming a third group member never receives a private
-message not addressed to them.
+16 tests:
+- **11 REST integration tests** — auth, groups, invite-code joining, PDF
+  upload/download, membership permission checks
+- **4 real-time signaling tests** using actual Socket.io client
+  connections — a full offer → accept → answer → ICE → end handshake
+  between two live sockets, and a DM-privacy test confirming a third group
+  member never receives a private message not addressed to them
+- **1 real WebRTC connection test** — using a real Node.js WebRTC engine
+  (`@roamhq/wrtc`) to simulate two actual devices, this drives the exact
+  handshake sequence the mobile app implements through the live signaling
+  server and verifies two genuine peer connections reach `connected`
+  state and successfully exchange data over a negotiated data channel —
+  not just that JSON messages get relayed correctly, but that a real
+  WebRTC call actually completes.
 
 ## Known limitations / next steps
 
