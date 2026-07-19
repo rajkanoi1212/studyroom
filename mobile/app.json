@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "StudyRoom",
+    "slug": "studyroom",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "scheme": "studyroom",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.studyroom.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "StudyRoom uses your camera for video calls with your study group.",
+        "NSMicrophoneUsageDescription": "StudyRoom uses your microphone for voice and video calls with your study group."
+      }
+    },
+    "android": {
+      "package": "com.studyroom.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "permissions": ["CAMERA", "RECORD_AUDIO", "MODIFY_AUDIO_SETTINGS"]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": ["expo-dev-client"]
+  }
+}

@@ -1,0 +1,13 @@
+node_modules/
+.expo/
+dist/
+studyroom.db
+studyroom.db-wal
+studyroom.db-shm
+server/uploads/*
+!server/uploads/.gitkeep
+server/tests/test.db*
+server/tests/test-uploads/
+.env
+*.log
+.DS_Store
